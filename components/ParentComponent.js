@@ -44,7 +44,7 @@ export default function ParentComponent() {
     setLoading(true);
     
     try {
-      const endpoint = isLogin ? 'http://localhost:5000/api/auth/login' : 'http://localhost:5000/api/auth/signup';
+      const endpoint = isLogin ? 'https://vercel-backend-amber-beta.vercel.app/api/auth/login' : 'https://vercel-backend-amber-beta.vercel.app/api/auth/signup';
       
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -79,7 +79,7 @@ export default function ParentComponent() {
 
   const fetchBookingHistory = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/bookings?userId=${userId}`);
+      const response = await fetch(`https://vercel-backend-amber-beta.vercel.app/api/bookings?userId=${userId}`);
       const data = await response.json();
       if (response.ok) {
         setBookingHistory(data);
@@ -113,7 +113,7 @@ export default function ParentComponent() {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/bookings', {
+      const response = await fetch('https://vercel-backend-amber-beta.vercel.app/api/bookings', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
