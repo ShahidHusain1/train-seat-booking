@@ -31,7 +31,7 @@ export default function LandingPage() {
   const loadSeats = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/seats", {
+      const res = await fetch("https://vercel-backend-amber-beta.vercel.app/api/seats", {
         headers: token ? { Authorization: `Bearer ${token}` } : {},
       });
       const data = await res.json();
@@ -70,7 +70,7 @@ export default function LandingPage() {
     }
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/bookings", {
+      const res = await fetch("https://vercel-backend-amber-beta.vercel.app/api/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -97,8 +97,8 @@ export default function LandingPage() {
   const handleAuthSubmit = async (data, isLogin) => {
     try {
       const endpoint = isLogin
-        ? "http://localhost:5000/api/auth/login"
-        : "http://localhost:5000/api/auth/signup";
+        ? "https://vercel-backend-amber-beta.vercel.app/api/auth/login"
+        : "https://vercel-backend-amber-beta.vercel.app/api/auth/signup";
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -128,7 +128,7 @@ export default function LandingPage() {
     try {
       const token = localStorage.getItem("token");
       const res = await fetch(
-        `http://localhost:5000/api/bookings/my-bookings`,
+        `https://vercel-backend-amber-beta.vercel.app/api/bookings/my-bookings`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -147,7 +147,7 @@ export default function LandingPage() {
   const handleReset = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/seats/reset", {
+      const res = await fetch("https://vercel-backend-amber-beta.vercel.app/api/seats/reset", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
