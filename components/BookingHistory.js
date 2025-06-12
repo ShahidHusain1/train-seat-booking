@@ -14,7 +14,7 @@ export default function BookingHistory({ history, seats, user }) {
       if (res.ok) {
         toast.success('Booking canceled successfully!');
         // Trigger a refresh of seats and history (you can pass a callback prop to handle this in the parent)
-        window.location.reload(); // Temporary solution; ideally, update state in parent
+       // window.location.reload(); // Temporary solution; ideally, update state in parent
       } else {
         throw new Error(result.message);
       }
